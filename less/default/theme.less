@@ -1,0 +1,451 @@
+//#C41232
+//#932F41
+//#7F061B
+//#E24863
+//#E27185
+
+
+@import "style/@uikit.less";
+@import "2sweb/@2sweb.less";
+
+/* ========================================================================
+   Warp theme
+ ========================================================================== */
+
+/*
+ * Force vertical scrollbar
+ */
+
+html { overflow-y: scroll; }
+
+/* Layout
+ ========================================================================== */
+
+.tm-navbar-overlay {
+   background: rgba(0,0,0,.4);
+   z-index: 1;
+}
+
+
+
+/*
+ * Blocks
+ */
+
+// .tm-toolbar,
+.tm-headerbar,
+.tm-navbar {
+    margin-top: @global-grid-gutter;
+    margin-bottom: @global-grid-gutter;
+}
+.tm-footer {
+    background-color: #7F061B;
+}
+
+
+/* Only large screens */
+@media (min-width: @breakpoint-xlarge) {
+
+    .tm-headerbar,
+    .tm-navbar {
+        margin-top: @global-grid-gutter-large;
+        margin-bottom: @global-grid-gutter-large;
+    }
+
+}
+
+/* Only phones */
+@media (max-width: @breakpoint-small-max) {
+
+    .tm-navbar {
+        margin: 0 -@utility-container-padding-horizontal @global-grid-gutter -@utility-container-padding-horizontal;
+        border-width: 0 0 1px 0;
+    }
+
+    .tm-logo-small:hover { text-decoration: none; };
+
+    .tm-navbar:not(.uk-navbar-attached) { border-radius: 0; }
+
+}
+
+/*
+ * Logo small
+ * Remove whitespace caused by vertical centering to prevent logo wrapping into the next line
+ */
+
+.tm-logo-small { letter-spacing: -0.31em; }
+
+/*
+ * Toolbar
+ */
+ 
+.tm-toolbar {
+  padding: 5px 0;
+  background-color: @global-link-color;
+}
+.tm-toolbar .uk-subnav {
+  margin: 0;
+}
+.tm-toolbar .uk-subnav .uk-nav-dropdown li > a {
+  color: #444;
+}
+.tm-toolbar .uk-subnav .uk-nav-dropdown li.uk-active > a {
+  color: #c41230;  
+}
+.tm-toolbar .uk-subnav .uk-nav-dropdown li > a:hover {
+  color: #fff;
+}
+
+.tm-toolbar .uk-float-left .uk-panel {
+    margin: 0 @global-grid-gutter 0 0;
+    float: left;
+}
+
+.tm-toolbar .uk-float-right .uk-panel {
+    margin: 0 0 0 @global-grid-gutter;
+    float: right;
+}
+
+
+
+/*
+ * Headerbar
+ */
+
+.tm-headerbar .tm-logo { float: left; }
+
+.tm-headerbar .uk-panel {
+    max-width: 300px;
+    margin-right: 0;
+    float: right;
+}
+
+/*
+ * Middle
+ */
+
+.tm-main > :nth-child(n+2) { margin-top: @global-grid-gutter; }
+
+.tm-content > :last-child { margin-bottom: 0; }
+
+.fl-theme-title {
+  position: relative;
+}
+.fl-theme-title h2 {
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  padding-right: 10px;
+  margin: 0;
+  background: #fff;
+  z-index: 2;
+}
+.fl-theme-title::after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    height: 1px;
+    left: 0;
+    background: linear-gradient(to right, rgba(0,0,0,.7) 0%,rgba(0,0,0,.7) 33%,rgba(0,0,0,0) 100%);
+}
+.fl-collections-title h2 {
+  background: #f9f9f9;
+}
+
+/*
+ * Title link
+ */
+
+.tm-title-link {
+  transition-duration: 0.2s;
+  color: @global-color;
+}
+
+.uk-panel:hover .tm-title-link,
+.tm-title-link:hover {
+  color: @global-link-color;
+}
+.uk-panel:active .tm-title-link,
+.tm-title-link:active {
+  color: @global-link-hover-color;
+}
+
+
+
+/*
+ * Footer
+ */
+
+.tm-footer {
+    position: relative;
+    text-align: center;
+}
+
+.tm-footer .uk-panel + .uk-panel { margin-top: @global-grid-gutter; }
+
+.tm-footer-copyright table {
+  width: 100%;
+  
+}
+
+.tm-footer-copyright .fl-totop {
+      text-align: right;
+}
+
+/*
+ * To-top scroller
+ */
+
+.tm-totop-scroller {
+    display: block;
+    // position: absolute;
+    // top: 0;
+    // right: 0;
+    // z-index: @global-z-index;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    color: @global-contrast-color;
+    text-align: center;
+    -webkit-transition: all linear 0.05s;
+    transition: all linear 0.05s;
+}
+
+.tm-totop-scroller:after {
+    content: "\f077";
+    font-family: "FontAwesome";
+}
+
+/*
+ * Hover
+ * 1. Apply hover style also to focus state
+ * 2. Remove default focus style
+ */
+
+.tm-totop-scroller:hover,
+.tm-totop-scroller:focus { /* 1 */
+    color: fade(@global-contrast-color, 90%);
+    // font-size: 22px;
+    outline: none; /* 2 */
+    text-decoration: none;
+}
+
+/* Active */
+.tm-totop-scroller:active {
+    color: darken(@global-color, 20%);
+    font-size: 11px;
+}
+
+
+/* Blog
+ ========================================================================== */
+
+/*
+ * Leading article
+ * Joomla only
+ */
+
+.tm-leading-article .uk-article:last-child {
+    padding-bottom: @article-margin-top;
+    border-bottom: 1px solid @base-hr-border;
+}
+
+
+/* Error
+ ========================================================================== */
+
+.tm-error-icon { font-size: 250px; }
+
+.tm-error-headline { font-size: 100px; }
+
+
+/* Offline
+ ========================================================================== */
+
+.tm-offline { width: 300px; }
+
+
+/* Socialbuttons
+ ========================================================================== */
+
+.tm-socialbuttons {
+
+     line-height: 1;
+
+     > div {
+         margin-right: 10px;
+         float: left;
+     }
+ }
+ 
+ 
+ 
+ 
+
+/* Panel
+ ========================================================================== */
+
+.tm-panel {
+
+}
+
+.tm-panel-hover,
+.tm-panel-hover * {
+  transition-duration: 0.2s;
+}
+.tm-panel-hover:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+.tm-panel-hover:hover > * {
+  // opacity: 0.9;
+}
+
+.tm-panel .tm-panel-title {
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+
+
+/* Media
+ ========================================================================== */
+
+
+@media (max-width: @breakpoint-small-max) {
+  #nav {
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+  }
+  .uk-navbar {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+  }
+  .fl-navbar {
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.fl-collections-header {
+    background-size: cover;
+    background-position: 50%;
+}
+.fl-collections-header p {
+  color: #000;
+}
+
+.uk-thumbnail .uk-overlay-background.uk-overlay-bottom {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  bottom: 15px;
+  right: 15px;
+}
+.uk-thumbnail .uk-overlay-background.uk-overlay-bottom h3,
+.uk-thumbnail .uk-thumbnail-caption h3 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+
+@media (max-width: 639px) {
+  // table {
+    // font-size: 90%;
+  // }
+  
+  h1, .uk-h1 {
+    font-size: 34px;
+    line-height: 40px;
+  }
+  h2, .uk-h2 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+  
+  h3, .uk-h3 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  
+  // .uk-container {
+      // padding: 0 10px;
+  // }
+  
+  // .uk-thumbnail .uk-overlay-background.uk-overlay-bottom {
+      // padding: 5px;
+      // bottom: 0;
+      // right: 0;
+  // }
+  // .uk-thumbnail .uk-overlay-background.uk-overlay-bottom h3,
+  // .uk-thumbnail .uk-thumbnail-caption h3 {
+      // font-size: 16px;
+      // line-height: 20px;
+  // }
+  
+  .uk-thumbnav > * {
+    padding-left: 5px;
+  }
+  
+  .uk-thumbnav > * > * {
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+
+  }
+  
+  .tm-footer {
+      padding: 20px 0;
+  }
+}
+
+@media (max-width: 419px) {
+  table {
+    font-size: 90%;
+  }
+  
+  
+  h1, .uk-h1 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  h2, .uk-h2 {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  h3, .uk-h3 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  
+  .uk-container {
+      padding: 0 10px;
+  }
+  
+  .uk-thumbnail .uk-overlay-background.uk-overlay-bottom {
+      padding: 5px;
+      bottom: 0;
+      right: 0;
+  }
+  .uk-thumbnail .uk-overlay-background.uk-overlay-bottom h3,
+  .uk-thumbnail .uk-thumbnail-caption h3 {
+      font-size: 16px;
+      line-height: 20px;
+  }
+  
+  .uk-slideshow.fl-slideshow-product {
+    max-width: 180px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

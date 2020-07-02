@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<fieldset name="yandex-metrika" label="Yandex Metrika">
+		
+		<field type="note" label="Yandex Metrika" heading="h3" />
+		
+		<field
+			name="enable"
+			label="Enable"
+			type="radio"
+			class="btn-group btn-group-yesno"
+			default="0"
+		>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+		<field
+			name="id"
+			type="number"
+			label="Counter ID"
+			min="0"
+			max="180"
+			step="1"
+		/>
+			
+	</fieldset>
+</form>

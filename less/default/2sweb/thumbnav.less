@@ -1,0 +1,155 @@
+// Variables
+// ========================================================================
+
+@thumbnav-margin-horizontal:                    10px;
+@thumbnav-margin-vertical:                      @thumbnav-margin-horizontal;
+
+@thumbnav-background:                           #fff;
+
+@thumbnav-opacity:                              1;
+@thumbnav-hover-opacity:                        0.8;
+@thumbnav-active-opacity:                       1;
+
+
+/* ========================================================================
+   Component: Thumbnav
+ ========================================================================== */
+
+/*
+ * 1. Gutter
+ * 2. Remove default list style
+ */
+
+.uk-thumbnav {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    /* 1 */
+    margin-left: -@thumbnav-margin-horizontal;
+    margin-top: -@thumbnav-margin-vertical;
+    /* 2 */
+    padding: 0;
+    list-style: none;
+}
+
+/*
+ * 1. Space is allocated solely based on content dimensions
+ * 2. Horizontal gutter is using `padding` so `uk-width-*` classes can be applied
+ */
+
+.uk-thumbnav > * {
+    /* 1 */
+    -ms-flex: none;
+    -webkit-flex: none;
+    flex: none;
+    /* 2 */
+    padding-left: @thumbnav-margin-horizontal;
+    margin-top: @thumbnav-margin-vertical;
+}
+
+/*
+ * DEPRECATED IE9 Support
+ */
+
+.uk-thumbnav:before,
+.uk-thumbnav:after {
+    content: "";
+    display: block;
+    overflow: hidden;
+}
+
+.uk-thumbnav:after { clear: both; }
+
+.uk-thumbnav > * { float: left; }
+
+
+/* Items
+ ========================================================================== */
+
+.uk-thumbnav > * > * {
+	display: block;
+	// background: @thumbnav-background;
+	.hook-thumbnav;
+	border-width: 2px;
+	border-style: solid;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	// border-radius: 5px;
+	transition-duration: 0.3s;
+	color: fade(@global-color, 50%);
+	border-color: fade(@global-color, 50%);
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  img {
+    display: block;
+        
+  }
+}
+
+
+.uk-thumbnav > * > :hover,
+.uk-thumbnav > * > :focus,
+.uk-thumbnav > * > :active {
+	color: @global-link-color;
+	border-color: @global-link-color;
+}
+
+.uk-thumbnav > .uk-active > * {
+	color: @global-link-hover-color;
+	border-color: @global-link-hover-color;
+}
+
+.uk-thumbnav > * > * > img {
+    // opacity: @thumbnav-opacity;
+    // -webkit-transition: opacity 0.15s linear;
+    // transition: opacity 0.15s linear;
+}
+
+/*
+ * Hover
+ */
+
+.uk-thumbnav > * > :hover > img,
+.uk-thumbnav > * > :focus > img {
+	opacity: 1;
+}
+
+/*
+ * Active
+ */
+
+.uk-thumbnav > .uk-active > * > img {
+	// opacity: @thumbnav-active-opacity;
+}
+
+
+// Hooks
+// ========================================================================
+
+.hook-thumbnav-misc;
+
+.hook-thumbnav() {}
+.hook-thumbnav-misc() {}
+
+
+//
+// Component: Thumbnav
+//
+// ========================================================================
+
+
+// Component
+// ========================================================================
+
+.hook-thumbnav() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-thumbnav-misc() {}

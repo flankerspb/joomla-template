@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<info>
+	<name>2SWEB TEMPLATE ENGINE</name>
+	<version>1.0.0</version>
+	<creationDate>2017.02.15</creationDate>
+	<updateUrl>https://2sweb.ru/updates</updateUrl>
+	<author>Vitaliy Moskalyuk</author>
+	<authorEmail>info@2sweb.ru</authorEmail>
+	<authorUrl>https://2sweb.ru</authorUrl>
+	<copyright>Copyright (C) Vitaliy Moskalyuk</copyright>
+	<license>http://www.gnu.org/licenses/gpl.html GNU/GPL</license>
+	<description>2SWebTE is a fast and slick theme framework - https://2sweb.ru/templates</description>
+</info>

@@ -1,0 +1,57 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Form advanced
+//
+// ========================================================================
+
+
+@form-advanced-border:                        @global-color;
+@form-advanced-checked-color:                 @global-background;
+
+
+@form-advanced-disabled-border:               rgba(0,0,0,0);
+@form-advanced-disabled-color:                @global-background;
+
+//
+// New
+//
+
+@form-advanced-checked-background:            @global-primary-background;
+@form-advanced-disabled-background:           @global-muted-background;
+
+
+// Component
+// ========================================================================
+
+.hook-form-advanced() {}
+
+.hook-form-advanced-checked() {}
+
+.hook-form-advanced-radio() {}
+
+.hook-form-advanced-checkbox() {}
+
+.hook-form-advanced-disabled() { background: @form-advanced-disabled-background; }
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-form-advanced-misc() {
+
+    .uk-form input[type="radio"]:not(:disabled):checked,
+    .uk-form input[type="checkbox"]:not(:disabled):checked,
+    .uk-form input[type=checkbox]:not(:disabled):indeterminate {
+        border-color: transparent;
+        background: @form-advanced-checked-background;
+    }
+
+    .uk-form input[type="radio"]:disabled:checked,
+    .uk-form input[type="checkbox"]:disabled:checked,
+    .uk-form input[type=checkbox]:disabled:indeterminate {
+        border-color:  @form-advanced-disabled-background;
+        background:  @form-advanced-disabled-background;
+    }
+
+}

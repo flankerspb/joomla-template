@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "https://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<extension version="3.9" type="template" client="site">
+	
+	<name>2sweb</name>
+	<version>1.0</version>
+	<creationDate>2019.02.03</creationDate>
+	<author>Vitaliy Moskalyuk</author>
+	<authorEmail>info@2sweb.ru</authorEmail>
+	<copyright>Copyright (C) 2014 - 2019 Vitaliy Moskalyuk, Inc. All rights reserved.</copyright>
+	<description>TPL_2SWEB_XML_DESCRIPTION</description>
+	
+	<files>
+		<filename>component.php</filename>
+		<filename>error.php</filename>
+		<filename>offline.php</filename>
+		<filename>favicon.ico</filename>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>img</folder>
+		<folder>js</folder>
+		<folder>language</folder>
+		<folder>less</folder>
+	</files>
+	
+	<positions>
+		<position settings="">toolbar-l</position>
+		<position>toolbar-c</position>
+		<position>toolbar-r</position>
+		<position>header</position>
+		<position>menu</position>
+		<position>logo</position>
+		<position>logo-small</position>
+		<position>breadcrumbs</position>
+		<position>top-a</position>
+		<position>top-b</position>
+		<position>main-top</position>
+		<position>main-bottom</position>
+		<position>bottom-a</position>
+		<position>bottom-b</position>
+		<position>footer-a</position>
+		<position>footer-b</position>
+		<position>offcanvas-left</position>
+		<position>offcanvas-right</position>
+		<position>modal</position>
+		<position>debug</position>
+	</positions>
+	
+	<languages folder="core/language">
+		<language tag="en-GB">en-GB/en-GB.tpl_2sweb.ini</language>
+		<language tag="en-GB">en-GB.tpl_2sweb.sys.ini</language>
+	</languages>
+	
+	<config>
+		<fields name="params" addfieldpath="/templates/2sweb/core/fields">
+			
+			<fieldset name="basic">
+				
+				<field name="helper" type="formhelper"/>
+				
+				<field
+					name="dev_mode"
+					type="radio"
+					label="dev_mode"
+					class="btn-group btn-group-yesno"
+					default="0"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				
+				<field
+					name="debug_mode"
+					type="radio"
+					label="debug_mode"
+					class="btn-group btn-group-yesno"
+					default="0"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				
+			</fieldset>
+			
+			<fieldset name="options">
+				
+				<field
+					name="logo"
+					type="media"
+					label="logo"
+				/>
+				
+				<field
+					name="logo_small"
+					type="media"
+					label="logo small"
+				/>
+				
+				<field
+					name="homepage_content"
+					type="radio"
+					label="homepage_content"
+					class="btn-group btn-group-yesno"
+					default="0"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				
+				
+				
+			</fieldset>
+			
+			<fieldset name="advanced">
+				
+				<field type="note" label="Offline" heading="h3" />
+				
+				<field
+					name="show_offline_image"
+					type="radio"
+					label="show_offline_image"
+					class="btn-group btn-group-yesno"
+					default="1"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				
+				<field
+					name="show_offline_form"
+					type="radio"
+					label="show_offline_form"
+					class="btn-group btn-group-yesno"
+					default="0"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				
+				<field type="note" label="Error Page" heading="h3" />
+				
+				<field
+					name="show_Error_form"
+					type="radio"
+					label="show_Error_form"
+					class="btn-group btn-group-yesno"
+					default="0"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				
+			</fieldset>
+			
+			<fieldset name="plugins" label="Plugins">
+				
+				<field
+					name="plugins"
+					type="subforms"
+					directory="templates/2sweb/core/plugins"
+				/>
+				
+			</fieldset>
+			
+		</fields>
+	</config>
+</extension>
